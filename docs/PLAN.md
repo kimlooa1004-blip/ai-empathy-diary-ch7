@@ -18,7 +18,7 @@
 | 1단계 | 뼈대 — 타입, 설정, 저장소, API 명세 | backend-developer | 완료 |
 | 2단계 | 병렬 구현 — 저장 / AI 분석 / 화면 | backend-developer, ai-integration-specialist, frontend-developer | 완료 |
 | 3단계 | 통합 — 세 갈래 합치고 로컬에서 띄우기 | backend-developer | 완료 |
-| 4단계 | QA — 기능 시험과 오류 처리 검증 | qa-engineer | 완료 |
+| 4단계 | QA — 기능 시험과 오류 처리 검증 | qa-engineer | 자동 시험까지 함 |
 | 5단계 | 배포 — 구글 로그인, Supabase, Vercel | backend-developer | 2단계로 미룸 |
 
 ## 단계별 내용
@@ -50,10 +50,13 @@
 - 세 갈래를 합쳐 `npm run dev`로 띄우고, 일기 쓰기 → 분석 → 기록 → 삭제가 이어지는지 본다.
 - **확인**: `http://localhost:3000`에서 일기를 쓰면 감정과 공감 메시지가 뜨고, 지난 기록에 남는다.
 
-### 4단계 QA (완료)
+### 4단계 QA (자동 시험까지 함)
 
-- 빈 글, 200자 초과, AI 실패, 키 없음, 위기 표현, 삭제를 시험한다.
-- **확인**: `docs/qa/` 보고에 적힌 심각도 높음 문제가 없다.
+- 자동 시험 38개로 빈 글, 200자 초과, AI 실패, 폴백, 키 없음, 위기 표현, 삭제를 확인했다.
+- 브라우저에서 쓰기 → 분석 → 기록 → 삭제와 휴대전화 너비를 직접 확인했다.
+- **아직 안 한 것**: 노션 7.4.9항의 모델 비교(qa-engineer를 haiku와 opus로 각각 돌려
+  `docs/qa/haiku.md`, `docs/qa/opus.md`, `compare.md`를 남기는 일)는 하지 않았다.
+- **확인**: `npm test` 38개 통과, `npm run build`와 `npm run lint` 통과.
 
 ### 5단계 배포 (2단계로 미룸)
 
