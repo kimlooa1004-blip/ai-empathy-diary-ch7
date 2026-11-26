@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* 따뜻하고 편안한 일기장 느낌. 종이빛 바탕에 잉크빛 글자를 쓴다. */
+:root {
+  --background: #fbf6ee;
+  --foreground: #3b3630;
+  --muted: #8b8176;
+  --card: #fffdf9;
+  --line: #e7ddcd;
+  --accent: #b4713f;
+  --accent-soft: #f4e5d4;
+  --warn: #8a6d3b;
+  --warn-soft: #fdf3dd;
+  --crisis: #8f4a52;
+  --crisis-soft: #fbeaec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #23201c;
+    --foreground: #ece5da;
+    --muted: #a99d8e;
+    --card: #2d2924;
+    --line: #413a32;
+    --accent: #d99b63;
+    --accent-soft: #3a3028;
+    --warn: #d9b779;
+    --warn-soft: #352d20;
+    --crisis: #e8a2a9;
+    --crisis-soft: #3a2729;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-crisis: var(--crisis);
+  --color-crisis-soft: var(--crisis-soft);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕",
+    system-ui, sans-serif;
+}

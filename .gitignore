@@ -48,3 +48,6 @@ next-env.d.ts
 
 # 세션마다 달라지는 내 설정
 /.claude/settings.local.json
+
+# 비밀 템플릿은 올린다
+!.env.example
